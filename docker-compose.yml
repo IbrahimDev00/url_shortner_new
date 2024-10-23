@@ -6,11 +6,12 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "8000:8080"  
     depends_on:
       - db
+
   db:
-    build: ./db
+    image: redis:alpine  
     ports:
       - "6379:6379"
     volumes:
